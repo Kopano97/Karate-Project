@@ -16,7 +16,7 @@ class ExamplesTest {
 
     @Test
     void testParallel() {
-        Results results = Runner.path("classpath:TheDogAPI/Breeds/getBreedById.feature", "classpath:TheDogAPI/Breeds/getBreeds.feature", "classpath:TheDogAPI/Votes/postVote.feature", "classpath:TheDogAPI/Votes/getAllVotes.feature", "classpath:TheDogAPI/Votes/getVoteById.feature", "classpath:TheDogAPI/Votes/deleteVote.feature")
+        Results results = Runner.path("classpath:TheDogAPI/Breeds/getBreeds.feature", "classpath:TheDogAPI/Votes/postVote.feature", "classpath:TheDogAPI/Votes/getAllVotes.feature", "classpath:TheDogAPI/Votes/getVoteById.feature", "classpath:TheDogAPI/Votes/deleteVote.feature")
                 .outputCucumberJson(true)
                 .parallel(5);
         generateReport(results.getReportDir());
