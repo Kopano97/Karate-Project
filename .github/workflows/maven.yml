@@ -19,22 +19,20 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
-	matrix:
-	  branch:[master, Kopano]
+	    matrix:
+	      branch:[master, Kopano]
 
     steps:
     - uses: actions/checkout@v3
       with:
         ref: ${{ matrix.branch }}
+
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-      #- name: Build with Maven
-      #run: mvn clean test --file Karate/pom.xml -Dtest=ExamplesTest,VotesRunner
-      #run: pwd 
 
     - name: Clean
       run: mvn clean --file Karate/pom.xml
