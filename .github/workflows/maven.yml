@@ -21,8 +21,8 @@ jobs:
     strategy:
       matrix:
         branch:
-          - master
           - Kopano
+          - master
 
     steps:
     - uses: actions/checkout@v3
