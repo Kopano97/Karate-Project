@@ -10,11 +10,13 @@ name: Java CI with Maven
 
 on:
   push:
-    branches:
-      - Kopano
-      - master
-  pull_request:
-    branches: [ "master" ]
+    branches-ignore:
+      - '*'
+    paths-ignore:
+      - '!.github/**'
+      - '!**/README.md'
+      - '!**/*.yml'
+      - '!**/*.yaml'
 
 jobs:
   build:
@@ -46,4 +48,5 @@ jobs:
 
     - name: Run Tests
       run: mvn test --file Karate/pom.xml -Dtest=BreedsRunner,VotesRunner
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/Kopano'
     
