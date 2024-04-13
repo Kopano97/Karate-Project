@@ -27,8 +27,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn clean test --file Karate/pom.xml -Dtest=ExamplesTest,VotesRunner
-      #run: pwd 
+
+    - name: Clean
+      run: mvn clean
+
+    - name: Compile
+      run: mvn compile
+
+    - name: Run Tests
+      run: mvn test -Dtest=ExamplesTest
 
     
