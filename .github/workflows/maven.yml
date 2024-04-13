@@ -45,5 +45,5 @@ jobs:
       run: mvn compile --file Karate/pom.xml 
 
     - name: Run Tests
-      run: mvn test --file Karate/pom.xml -Dtest=ExamplesTest,VotesRunner
+      run: mvn test --file Karate/pom.xml -Dtest=BreedsRunner,VotesRunner
     
