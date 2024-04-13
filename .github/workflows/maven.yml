@@ -31,7 +31,7 @@ jobs:
       #run: mvn clean test --file Karate/pom.xml -Dtest=ExamplesTest,VotesRunner
       #run: pwd 
 
-     - name: Clean
+    - name: Clean
       run: mvn clean --file Karate/pom.xml
 
     - name: Compile
