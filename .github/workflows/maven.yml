@@ -20,7 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-	        branch:[master, Kopano]
+        branch:
+          - master
+          - Kopano
 
     steps:
     - uses: actions/checkout@v3
