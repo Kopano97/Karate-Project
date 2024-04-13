@@ -34,7 +34,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Clean
+    - name: Cleanb
       run: mvn clean --file Karate/pom.xml
 
     - name: Compile
@@ -42,5 +42,5 @@ jobs:
 
     - name: Run Tests
       run: mvn test --file Karate/pom.xml -Dtest=BreedsRunner,VotesRunner
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/Kopano'
+      if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/Kopano'
     
